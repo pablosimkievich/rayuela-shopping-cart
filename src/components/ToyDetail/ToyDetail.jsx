@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import './ToyDetail.css'
 
 export const ToyDetail = () => {
   const { id } = useParams()
@@ -23,13 +24,14 @@ export const ToyDetail = () => {
 
 
   return (
-    <div>
+    <div className='detail-container'>
       <h2>{toy.name}</h2>
-      <img src={toy.img} alt={toy.name} />
+      <img className='img' src={toy.img} alt={toy.name} />
       <p>{toy.description}</p>
-      <p>Price: ${toy.price}</p>
-      <p>Age: {toy.age}</p>
-      <p>Category: {toy.category}</p>
+      <p>Precio: ${toy.price}</p>
+      <p>Categoría: {toy.category}</p>
+      <p>Edades Recomendadas: {toy.age}</p>
+    <button className='btn'>Agregar al Carrito</button>
     </div>
   )
 }

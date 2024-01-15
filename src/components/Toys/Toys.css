@@ -12,10 +12,18 @@
     text-align: center;
     width: 320px;
     border-radius: 12px;
-    box-shadow: 5px 12px 8px 8px #767;
+    box-shadow: 5px 5px 5px 3px rgb(206, 198, 206); 
     margin: 25px 0px;
+}
+
+.link {
+    text-decoration: none;
 }
 
 .image {
     max-width: 250px;
+}
+
+p {
+    margin: 10px;
 }
