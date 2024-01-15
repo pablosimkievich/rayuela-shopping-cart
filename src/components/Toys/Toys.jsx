@@ -1,14 +1,18 @@
 import React from "react"
 import { useFiltersContext } from '../../context/filtersContext.jsx'
+import { useProductContext } from "../../context/productContext.jsx"
 import { useState, useEffect } from "react"
+import { Link } from 'react-router-dom'
 import axios from "axios"
 import './Toys.css'
 
 export const Toys = () => {
 
   const { filters } = useFiltersContext()
+  const { searchQuery } = useProductContext()
 
   const [toys, setToys] = useState([])
+  
   
   const theProducts = async () => {
     const json = await axios("https://rayuela.onrender.com/api/products")
@@ -17,7 +21,6 @@ export const Toys = () => {
 
   useEffect(() => {
     theProducts();
-    console.log('Filters in Toys:', filters)
   }, [filters]);
 
   const filterProducts = (products) => {
@@ -31,13 +34,20 @@ export const Toys = () => {
 
   }
 
-  const filteredToys = filterProducts(toys)
+  const searchProducts = (products) => {
+    return products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  }
+
+  const filteredToys = searchProducts(filterProducts(toys))
+
   
   return (
     <div className="row">
       {filteredToys?.map((e, i) => {
         return (
-        <div className="card" key={i}>
+        <Link to={`/toys/${e.id}`} className="card" key={i} >
           <p hidden>{e.id}</p>
           <img className="image" src={e.img} alt="toys" />
           <p>{e.name}</p>
@@ -45,7 +55,7 @@ export const Toys = () => {
           <p>{e.age}</p>
           <p>{e.category}</p>
           <p>{e.description}</p>
-        </div>
+        </Link>
       )
       })}
     </div>

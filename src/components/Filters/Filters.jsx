@@ -11,8 +11,6 @@ export const Filters = () => {
     setFilters((prevFilters) => ({ ...prevFilters, [name]: value }));
   }
 
-  console.log('Filters:', filters)
-
   return (
     <div className="container">
       <div className="select">

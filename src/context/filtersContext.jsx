@@ -11,8 +11,6 @@ export const FiltersProvider = ({ children }) => {
     category: "",
     age: ""
   })
- 
-  console.log('Context Filters:', filters)
   
   return (
     <FiltersContext.Provider value={{

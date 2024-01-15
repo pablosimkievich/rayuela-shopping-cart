@@ -9,7 +9,7 @@ export const Header = () => {
     <div>
         <h1>Rayuela Shopping Cart</h1>
         < Filters />
-        <SearchBar />
+        < SearchBar />
     </div>
   )
 }
