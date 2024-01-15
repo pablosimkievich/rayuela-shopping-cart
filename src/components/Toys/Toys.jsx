@@ -51,7 +51,7 @@ export const Toys = () => {
               <p>{e.category}</p>
               <p>{e.age}</p>
             </Link>
-            <button className='btn'>Agregar al Carrito</button>
+            <button id={e.id} className='btn'>Agregar al Carrito</button>
           </div>
         );
       })}

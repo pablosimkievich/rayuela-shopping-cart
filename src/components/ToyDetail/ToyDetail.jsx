@@ -31,7 +31,7 @@ export const ToyDetail = () => {
       <p>Precio: ${toy.price}</p>
       <p>Categoría: {toy.category}</p>
       <p>Edades Recomendadas: {toy.age}</p>
-    <button className='btn'>Agregar al Carrito</button>
+    <button id={toy.id} className='btn'>Agregar al Carrito</button>
     </div>
   )
 }

@@ -18,6 +18,11 @@
 
 .link {
     text-decoration: none;
+    color: black;
+}
+
+.link:visited {
+    color: black;
 }
 
 .image {
@@ -25,5 +30,9 @@
 }
 
 p {
-    margin: 10px;
+    margin: 10px 0 0 0;
+}
+
+.btn {
+    margin: 0 0 0 0;
 }
