@@ -1,23 +1,23 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react";
 
+const FiltersContext = createContext();
 
-const FiltersContext = createContext()
-
-export const useFiltersContext = () => useContext(FiltersContext)
+export const useFiltersContext = () => useContext(FiltersContext);
 
 export const FiltersProvider = ({ children }) => {
-
-  const [ filters, setFilters ] = useState({
+  const [filters, setFilters] = useState({
     category: "",
-    age: ""
-  })
-  
+    age: "",
+  });
+
   return (
-    <FiltersContext.Provider value={{
-      filters,
-      setFilters
-    }}>
+    <FiltersContext.Provider
+      value={{
+        filters,
+        setFilters,
+      }}
+    >
       {children}
     </FiltersContext.Provider>
-  )
-}
+  );
+};
