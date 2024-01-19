@@ -34,3 +34,67 @@ p {
     font-weight: 600;
 }
 
+.home-btn {
+    padding-bottom: 15px;
+}
+
+.home-icon {
+    font-size: 25px;
+    color: blue;
+    margin-left: 15px;
+    translate:  0 7px;
+}
+
+.toy-detail-btn {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.cart-icon {
+    font-size: 25px;
+    margin-left: 15px;
+    translate:  0 7px;
+    color: blue;
+}
+
+.detail-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.detail-icon {
+    color: blue;
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    margin-left: 28px;
+    top: 4px;
+}
+
+.red-box-detail {
+    background-color: tomato;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    translate: 52px -14px;
+    border-radius: 6px;
+}
+
+.detail-title-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0;
+    position: relative;
+    top: 0px;
+    bottom: 25px;
+}
+
+
+
+

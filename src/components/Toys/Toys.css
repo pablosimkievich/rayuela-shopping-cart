@@ -26,13 +26,22 @@
 }
 
 .image {
-    max-width: 250px;
+    max-width: 300px;
 }
 
 p {
     margin: 10px 0 0 0;
 }
 
-.btn {
-    margin: 0 0 0 0;
+.toys-btn {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.cart-icon {
+    font-size: 25px;
+    margin-left: 15px;
+    translate:  0 7px;
+    color: blue;
 }

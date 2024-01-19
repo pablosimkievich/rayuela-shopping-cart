@@ -1,19 +1,20 @@
-import React from "react";
-import { useFiltersContext } from "../../context/filtersContext.jsx";
-import { useProductContext } from "../../context/productContext.jsx";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { useFiltersContext } from "../../context/filtersContext.jsx"
+import { useProductContext } from "../../context/productContext.jsx"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { CiShoppingCart } from "react-icons/ci"
 import axios from "axios";
 import "./Toys.css";
 
 export const Toys = () => {
-  const { filters } = useFiltersContext();
-  const { searchQuery } = useProductContext();
+  const { filters } = useFiltersContext()
+  const { searchQuery } = useProductContext()
 
-  const [toys, setToys] = useState([]);
+  const [toys, setToys] = useState([])
 
   const theProducts = async () => {
-    const json = await axios("https://rayuela.onrender.com/api/products");
+    const json = await axios("https://rayuela.onrender.com/api/products")
     setToys(json.data.products);
   };
 
@@ -51,10 +52,15 @@ export const Toys = () => {
               <p>{e.category}</p>
               <p>{e.age}</p>
             </Link>
-            <button id={e.id} className='btn'>Agregar al Carrito</button>
+            <button 
+            id={e.id} 
+            className='btn toys-btn'
+            >Agregar al Carrito
+            <CiShoppingCart className="cart-icon" />
+            </button>
           </div>
         );
       })}
     </div>
-  );
-};
+  )
+}
