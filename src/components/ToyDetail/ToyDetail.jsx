@@ -1,12 +1,13 @@
 // ToyDetail.jsx
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
 import "./ToyDetail.css"
 
 
 export const ToyDetail = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const [toy, setToy] = useState({})
 
@@ -26,7 +27,14 @@ export const ToyDetail = () => {
 
   return (
     <>
+      
+      <div className="header-container">
       <h1>Rayuela Shopping Cart</h1>
+        <button
+        className="btn"
+        onClick={ () => navigate("/")}
+        >Volver al Inicio</button>
+      </div>
       
       <div className="detail-container">
         <h2>{toy.name}</h2>
