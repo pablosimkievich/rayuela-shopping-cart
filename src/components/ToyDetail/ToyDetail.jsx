@@ -23,8 +23,14 @@ export const ToyDetail = () => {
         console.error("Error fetching toy details:", error);
       }
     };
-    fetchToy();
-  }, [id]);
+    fetchToy()
+  }, [id])
+
+
+  const handleButtonClick = (event) => {
+    const toyId = event.target.id
+    console.log(toyId)
+  }
 
   return (
     <>
@@ -52,7 +58,11 @@ export const ToyDetail = () => {
         <p>Precio: ${toy.price}</p>
         <p>Categoría: {toy.category}</p>
         <p>Edades Recomendadas: {toy.age}</p>
-        <button id={toy.id} className="btn toy-detail-btn">
+        <button 
+        id={toy.id} 
+        className="btn toy-detail-btn"
+        onClick={handleButtonClick}
+        >
           Agregar al Carrito
           <CiShoppingCart className="cart-icon" />
         </button>

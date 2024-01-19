@@ -34,6 +34,10 @@ p {
     font-weight: 600;
 }
 
+.btn:active {
+    scale: 1.03;
+}
+
 .home-btn {
     padding-bottom: 15px;
 }

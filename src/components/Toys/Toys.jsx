@@ -37,7 +37,12 @@ export const Toys = () => {
     );
   };
 
-  const filteredToys = searchProducts(filterProducts(toys));
+  const filteredToys = searchProducts(filterProducts(toys))
+
+  const handleButtonClick = (event) => {
+    const toyId = event.target.id
+    console.log(toyId)
+  }
 
   return (
     <div className="row">
@@ -55,6 +60,7 @@ export const Toys = () => {
             <button 
             id={e.id} 
             className='btn toys-btn'
+            onClick={handleButtonClick}
             >Agregar al Carrito
             <CiShoppingCart className="cart-icon" />
             </button>
