@@ -1,6 +1,6 @@
 // ToyDetail.jsx
 import { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import "./ToyDetail.css"
 
@@ -33,11 +33,12 @@ export const ToyDetail = () => {
         <button
         className="btn"
         onClick={ () => navigate("/")}
-        >Volver al Inicio</button>
+        >Volver al Inicio
+        </button>
       </div>
       
       <div className="detail-container">
-        <h2>{toy.name}</h2>
+        <h2>{toy?.name}</h2>
         <img className="img" src={toy.img} alt={toy.name} />
         <p>{toy.description}</p>
         <p>Precio: ${toy.price}</p>
@@ -46,6 +47,7 @@ export const ToyDetail = () => {
         <button id={toy.id} className="btn">
           Agregar al Carrito
         </button>
+
       </div>
     </>
   )
