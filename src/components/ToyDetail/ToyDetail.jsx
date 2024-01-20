@@ -5,6 +5,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiHome } from "react-icons/ci";
 import axios from "axios";
 import "./ToyDetail.css";
+import { useCartStore } from "../../store/cartStore.jsx"
 
 export const ToyDetail = () => {
   const { id } = useParams();
@@ -26,11 +27,14 @@ export const ToyDetail = () => {
     fetchToy()
   }, [id])
 
+  const addToCart = useCartStore(state => state.addToCart)
 
+  /*
   const handleButtonClick = (event) => {
     const toyId = event.target.id
     console.log(toyId)
   }
+  */
 
   return (
     <>
@@ -61,7 +65,7 @@ export const ToyDetail = () => {
         <button 
         id={toy.id} 
         className="btn toy-detail-btn"
-        onClick={handleButtonClick}
+        onClick={() => addToCart(toy.id)}
         >
           Agregar al Carrito
           <CiShoppingCart className="cart-icon" />

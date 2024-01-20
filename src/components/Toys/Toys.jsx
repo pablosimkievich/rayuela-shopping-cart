@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 import { CiShoppingCart } from "react-icons/ci"
 import axios from "axios";
 import "./Toys.css";
+import { useCartStore } from "../../store/cartStore.jsx"
+// import shallow from 'zustand/shallow'
 
 export const Toys = () => {
   const { filters } = useFiltersContext()
@@ -39,10 +41,15 @@ export const Toys = () => {
 
   const filteredToys = searchProducts(filterProducts(toys))
 
+  const addToCart = useCartStore(state => state.addToCart)
+
+  /*
   const handleButtonClick = (event) => {
-    const toyId = event.target.id
-    console.log(toyId)
+    // const toyId = event.target.id
+    // console.log(toyId)
+    
   }
+  */
 
   return (
     <div className="row">
@@ -60,7 +67,7 @@ export const Toys = () => {
             <button 
             id={e.id} 
             className='btn toys-btn'
-            onClick={handleButtonClick}
+            onClick={() => addToCart(e.id)}
             >Agregar al Carrito
             <CiShoppingCart className="cart-icon" />
             </button>
