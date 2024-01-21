@@ -11,6 +11,7 @@ export const ShoppingCart = ({ cartItem }) => {
   const toyUnitsQ = useCartStore((state) => state.toyUnitsQ);
   const totalAmount = useCartStore((state) => state.totalAmount);
   const cart = useCartStore((state) => state.cart);
+  const addToCart = useCartStore(state => state.addToCart)
 
   return (
     <div className="shopping-cart-container">
@@ -57,8 +58,10 @@ export const ShoppingCart = ({ cartItem }) => {
                   <div className="input-button-container">
                     <input
                       className="item-input"
-                      value={cartItem.quantity}
                       type="number"
+                      min="1"
+                      max="30"
+                      onChange={() => addToCart()}
                     />
                     <button className="remove-button"> X </button>
                   </div>

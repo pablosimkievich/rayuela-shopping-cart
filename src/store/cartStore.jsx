@@ -26,22 +26,16 @@ export const useCartStore = create(persist((set, get) => ({
                 cartItems[i].quantity++ 
                 set({toyUnitsQ: toyUnitsQ++ + 1})
                 getTotalAmount()
-                // console.log(cartItems)
-                // console.log(toyUnitsQ)
-                return
             }
         }
         cartItems.push(toyObject)
         set({toyUnitsQ: toyUnitsQ++ + 1})
         getTotalAmount()
-        // console.log(cartItems)
-        // console.log(toyUnitsQ)
     },
     getTotalAmount: () => {
         let cartItems = get().cart
         let totalAmount = cartItems?.map(item=> item.price * item.quantity).reduce((x, y) => x + y, 0)
         set({totalAmount: totalAmount})
-        // console.log(totalAmount)
     }, 
     incrementItemQ: () => {
 
@@ -50,7 +44,11 @@ export const useCartStore = create(persist((set, get) => ({
 
     },
     removeCartItem: () => {
-
+        
+    },
+    updateToyUnitsQ: () => {
+        let addToCart = get().addToCart
+        addToCart()
     },
     clearStore: () => {
         set({

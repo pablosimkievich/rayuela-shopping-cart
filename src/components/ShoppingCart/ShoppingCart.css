@@ -88,6 +88,7 @@ h2 {
     border-radius: 12px;
     padding: 5px;
     box-shadow: 5px 5px 5px 3px rgb(206, 198, 206); 
+    padding: 0 25px;
 }
 
 .item-img {
@@ -99,11 +100,22 @@ h2 {
 }
 
 .item-price {
-    flex: 2;
+    flex: 3;
 }
 
 .item-input {
-    max-width: 50px;
+    width: 60px;
+    margin-right: 25px;
+    background-color: #eee;
+    height: 30px;
+    border-radius: 7px;
+    padding: 10px;
+    border: none;
+    font-weight: 600;
+}
+
+.item-input:focus {
+    outline: none;
 }
 
 .remove-button {
@@ -112,10 +124,10 @@ h2 {
 }
 
 .remove-button:hover {
-    background-color: tomato;
+    background-color: rgb(199, 78, 57);
 }
 
 
 .input-button-container {
-    max-width: 30%;
+    max-width: 40%;
 }

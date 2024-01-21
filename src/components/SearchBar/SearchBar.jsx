@@ -13,7 +13,7 @@ export const SearchBar = () => {
   return (
     <div className="container">
       <label htmlFor="query">Busca un juguete</label>
-      <input type="text" onChange={handleSearchChange} value={searchQuery} />
+      <input className="search-input" type="text" onChange={handleSearchChange} value={searchQuery} />
       <button>Buscar</button>
     </div>
   );

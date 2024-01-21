@@ -5,7 +5,7 @@
     margin: 20px;
 }
 
-input {
+.search-input {
     min-height: 30px;
     min-width: 200px;
     border: none;
@@ -16,13 +16,13 @@ input {
     font-weight: 600;
 }
 
-input:focus {
+.search-input:focus {
     outline: none;
 }
 
 button {
     min-height: 30px;
-    min-width: 70px;
+    min-width: 50px;
     background-color: #ddd;
     border: none;
     border-radius: 8px;
