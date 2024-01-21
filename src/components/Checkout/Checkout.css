@@ -1,0 +1,15 @@
+
+.checkout-title {
+    text-align: center;
+}
+
+.pay-method-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.img {
+    width: 22%;
+    margin: 20px;
+}

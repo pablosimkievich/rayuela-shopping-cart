@@ -1,3 +1,4 @@
+
 .the-header-container {
     display: flex;
     flex-direction: column;
@@ -50,4 +51,24 @@
 
 .amount-title {
     text-align: center;
+}
+
+.amount-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.checkout-icon {
+    color: blue;
+    font-size: 32px;
+    position: absolute;
+    right: 45px;
 }
