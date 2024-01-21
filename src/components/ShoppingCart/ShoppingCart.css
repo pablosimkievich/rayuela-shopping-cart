@@ -94,13 +94,20 @@ h2 {
     width: 15%;
 }
 
+.item-name {
+    flex: 3;
+}
+
+.item-price {
+    flex: 2;
+}
+
 .item-input {
-    width: 0px;
+    max-width: 50px;
 }
 
 .remove-button {
     background-color: tomato;
-    max-width: 15px;
     font-weight: 600;
 }
 
@@ -108,3 +115,7 @@ h2 {
     background-color: tomato;
 }
 
+
+.input-button-container {
+    max-width: 30%;
+}

@@ -53,7 +53,11 @@ export const useCartStore = create(persist((set, get) => ({
 
     },
     clearStore: () => {
-        set({}, true)
+        set({
+            cart: [],
+            totalAmount: 0,
+            toyUnitsQ: 0
+        })
     }
 }),
 {

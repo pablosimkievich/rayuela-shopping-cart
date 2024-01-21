@@ -52,14 +52,16 @@ export const ShoppingCart = ({ cartItem }) => {
               <tbody>
                 <tr className="table table-row">
                   <img className="item-img" src={cartItem.img} alt="" />
-                  <p>{cartItem.name}</p>
-                  <p>$ {cartItem.price}</p>
-                  <input
-                    className="item-input"
-                    value={cartItem.quantity}
-                    type="number"
-                  />
-                  <button className="remove-button"> X </button>
+                  <p className="item-name">{cartItem.name}</p>
+                  <p className="item-price">$ {cartItem.price}</p>
+                  <div className="input-button-container">
+                    <input
+                      className="item-input"
+                      value={cartItem.quantity}
+                      type="number"
+                    />
+                    <button className="remove-button"> X </button>
+                  </div>
                 </tr>
               </tbody>
             </table>

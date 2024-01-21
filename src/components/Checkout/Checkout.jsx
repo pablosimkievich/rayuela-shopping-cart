@@ -5,15 +5,15 @@ import mercadopago from "../../assets/img/mercado-pago.svg";
 import visa from "../../assets/img/visa.svg";
 import paypal from "../../assets/img/paypal.svg";
 import "./Checkout.css";
-// import { useCartStore } from "../../store/cartStore";
+import { useCartStore } from "../../store/cartStore";
 
 export const Checkout = () => {
   const navigate = useNavigate();
-  // const clearStore = useCartStore(state => state.clearStore)
+  const clearStore = useCartStore(state => state.clearStore)
   
   useEffect(() => {
-    // clearStore()
-  }, [])
+    clearStore()
+  }, [clearStore])
 
   return (
     <div>
