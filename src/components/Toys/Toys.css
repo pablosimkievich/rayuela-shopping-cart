@@ -1,3 +1,9 @@
+.toy-list-container {
+    margin-bottom: 110px;
+    padding-top: 230px;
+}
+
+
 .row {
     display: flex;
     flex-wrap: wrap;

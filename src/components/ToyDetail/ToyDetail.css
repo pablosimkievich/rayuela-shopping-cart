@@ -1,5 +1,5 @@
 
-.header-container {
+.the-header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 5px 5px 5px 3px rgb(206, 198, 206); 
-    margin: 5% 20% 0 ;
+    margin: 2% 20% 0 ;
     border-radius: 8px;
 }
 

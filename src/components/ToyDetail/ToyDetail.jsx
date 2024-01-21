@@ -28,17 +28,11 @@ export const ToyDetail = () => {
   }, [id])
 
   const addToCart = useCartStore(state => state.addToCart)
-
-  /*
-  const handleButtonClick = (event) => {
-    const toyId = event.target.id
-    console.log(toyId)
-  }
-  */
+  const toyUnitsQ = useCartStore(state => state.toyUnitsQ)
 
   return (
     <>
-      <div className="header-container">
+      <div className="the-header-container">
         <div className="detail-title-icon">
           <h1 className="detail-title">
             Rayuela Shopping Cart
@@ -46,7 +40,7 @@ export const ToyDetail = () => {
               <CiShoppingCart className="detail-icon" />
             </Link>
           </h1>
-          <div className="red-box-detail">0</div>
+          <div className="red-box-detail">{toyUnitsQ}</div>
         </div>
 
         <button className="btn home-btn" onClick={() => navigate("/")}>

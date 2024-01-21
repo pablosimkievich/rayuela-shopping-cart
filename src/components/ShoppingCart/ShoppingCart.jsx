@@ -1,10 +1,12 @@
+import { Item } from './Item.jsx'
 
-import React from 'react'
 
 export const ShoppingCart = () => {
+
   return (
     <div>
       Soy Shopping Cart
+      < Item />
     </div>
   )
 }

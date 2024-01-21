@@ -45,6 +45,7 @@ export const Toys = () => {
 
 
   return (
+    <div className="toy-list-container">
     <div className="row">
       {filteredToys?.map((e, i) => {
         return (
@@ -68,5 +69,7 @@ export const Toys = () => {
         );
       })}
     </div>
+    </div>
+
   )
 }

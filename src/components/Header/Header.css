@@ -31,3 +31,12 @@ h1 {
     translate: 32px -14px;
     border-radius: 6px;
 }
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    background-color: white;
+    z-index: 10;
+}

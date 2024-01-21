@@ -18,21 +18,30 @@ export const useCartStore = create((set, get) => ({
             quantity: 1 
         }
         const cartItems = get().cart
+        let toyUnitsQ = get().toyUnitsQ
+        let getTotalAmount = get().getTotalAmount
         for (let i = 0; i < cartItems.length; i++) {
             if (cartItems[i].id === toyObject.id) {
                 cartItems[i].quantity++ 
+                set({toyUnitsQ: toyUnitsQ++ + 1})
+                getTotalAmount()
+                // console.log(cartItems)
+                // console.log(toyUnitsQ)
                 return
             }
         }
         cartItems.push(toyObject)
-        console.log(cartItems)
+        set({toyUnitsQ: toyUnitsQ++ + 1})
+        getTotalAmount()
+        // console.log(cartItems)
+        // console.log(toyUnitsQ)
     },
     getTotalAmount: () => {
-
+        let cartItems = get().cart
+        let totalAmount = cartItems?.map(item=> item.price * item.quantity).reduce((x, y) => x + y, 0)
+        set({totalAmount: totalAmount})
+        // console.log(totalAmount)
     }, 
-    getToyUnitsQ: () => {
-
-    },
     incrementItemQ: () => {
 
     },
@@ -43,7 +52,7 @@ export const useCartStore = create((set, get) => ({
 
     },
     clearStore: () => {
-
+        set({}, true)
     }
 }))
  
