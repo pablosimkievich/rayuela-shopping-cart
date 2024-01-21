@@ -43,13 +43,6 @@ export const Toys = () => {
 
   const addToCart = useCartStore(state => state.addToCart)
 
-  /*
-  const handleButtonClick = (event) => {
-    // const toyId = event.target.id
-    // console.log(toyId)
-    
-  }
-  */
 
   return (
     <div className="row">
