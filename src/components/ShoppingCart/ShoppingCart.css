@@ -80,16 +80,31 @@ h2 {
 .table-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 80vw;
     margin: 0% 15%;
     margin-bottom: 50px;
     border-radius: 12px;
-    padding: 15px;
+    padding: 5px;
     box-shadow: 5px 5px 5px 3px rgb(206, 198, 206); 
 }
 
 .item-img {
     width: 15%;
 }
+
+.item-input {
+    width: 0px;
+}
+
+.remove-button {
+    background-color: tomato;
+    max-width: 15px;
+    font-weight: 600;
+}
+
+.remove-button:hover {
+    background-color: tomato;
+}
+

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiHome } from "react-icons/ci";
 import mercadopago from "../../assets/img/mercado-pago.svg";
@@ -9,6 +10,10 @@ import "./Checkout.css";
 export const Checkout = () => {
   const navigate = useNavigate();
   // const clearStore = useCartStore(state => state.clearStore)
+  
+  useEffect(() => {
+    // clearStore()
+  }, [])
 
   return (
     <div>
