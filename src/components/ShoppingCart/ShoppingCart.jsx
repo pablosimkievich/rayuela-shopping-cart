@@ -5,13 +5,14 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiMoneyCheck1 } from "react-icons/ci";
 import { useCartStore } from "../../store/cartStore.jsx";
 
-export const ShoppingCart = ({ cartItem }) => {
+export const ShoppingCart = () => {
   const navigate = useNavigate();
 
   const toyUnitsQ = useCartStore((state) => state.toyUnitsQ);
   const totalAmount = useCartStore((state) => state.totalAmount);
-  const cart = useCartStore((state) => state.cart);
-  const addToCart = useCartStore(state => state.addToCart)
+  const cartItems = useCartStore((state) => state.cart);
+  const removeCartItem = useCartStore(state => state.removeCartItem)
+  // const updateCartItemQ = useCartStore(state => state.updateCartItemQ)
 
   return (
     <div className="shopping-cart-container">
@@ -46,28 +47,28 @@ export const ShoppingCart = ({ cartItem }) => {
         <h2>El Carro de Compras está vacío</h2>
       )}
 
-      {cart?.map((cartItem, i) => {
+      {cartItems?.map((cartItem, i) => {
         return (
-          <div className="cart-item-container">
-            <table>
-              <tbody>
-                <tr className="table table-row">
+          <div className="cart-items-container">
+            <div>
+                <div className="table table-row" key={i}>
                   <img className="item-img" src={cartItem.img} alt="" />
                   <p className="item-name">{cartItem.name}</p>
                   <p className="item-price">$ {cartItem.price}</p>
-                  <div className="input-button-container">
                     <input
                       className="item-input"
                       type="number"
                       min="1"
                       max="30"
-                      onChange={() => addToCart()}
+                      defaultValue={cartItem.quantity}
+                      // onChange={() => updateCartItemQ(cartItem.id)}
                     />
-                    <button className="remove-button"> X </button>
-                  </div>
-                </tr>
-              </tbody>
-            </table>
+                    <button 
+                      className="remove-button"
+                      onClick={() => removeCartItem(cartItem.id)}
+                      > X </button>
+                </div>
+            </div>
           </div>
         );
       })}

@@ -1,3 +1,7 @@
+.cart-items-container {
+    display: flex;
+}
+
 
 .the-header-container {
     display: flex;
