@@ -44,9 +44,9 @@ export const useCartStore = create(persist((set, get) => ({
 
     },
     removeCartItem: () => {
-        
+
     },
-    updateToyUnitsQ: () => {
+    updateCartItem: () => {
         let addToCart = get().addToCart
         addToCart()
     },
