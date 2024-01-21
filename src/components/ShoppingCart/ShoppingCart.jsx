@@ -10,6 +10,7 @@ export const ShoppingCart = () => {
   const navigate = useNavigate()
 
   const toyUnitsQ = useCartStore(state => state.toyUnitsQ)
+  const totalAmount = useCartStore(state => state.totalAmount)
 
   return (
     <div>
@@ -30,7 +31,7 @@ export const ShoppingCart = () => {
         </button>
       </div>
 
-      
+      <h2 className="amount-title">Monto Total:  $ {totalAmount} </h2>
 
       <Item />
 

@@ -47,3 +47,7 @@
     translate: 52px -14px;
     border-radius: 6px;
 }
+
+.amount-title {
+    text-align: center;
+}
