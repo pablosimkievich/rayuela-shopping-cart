@@ -4,9 +4,11 @@ import mercadopago from "../../assets/img/mercado-pago.svg";
 import visa from "../../assets/img/visa.svg";
 import paypal from "../../assets/img/paypal.svg";
 import "./Checkout.css";
+// import { useCartStore } from "../../store/cartStore";
 
 export const Checkout = () => {
   const navigate = useNavigate();
+  // const clearStore = useCartStore(state => state.clearStore)
 
   return (
     <div>

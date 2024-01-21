@@ -1,8 +1,9 @@
 import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import axios from "axios"
 
 
-export const useCartStore = create((set, get) => ({
+export const useCartStore = create(persist((set, get) => ({
     totalAmount: 0,
     toyUnitsQ: 0,
     cart: [],
@@ -54,6 +55,10 @@ export const useCartStore = create((set, get) => ({
     clearStore: () => {
         set({}, true)
     }
+}),
+{
+    name: "cart",
+    storage: createJSONStorage( () => localStorage )
 }))
  
 

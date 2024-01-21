@@ -1,9 +1,13 @@
 import './Item.css'
 
+
 export const Item = () => {
+
+
+
   return (
     <div>
-      Soy Item
+      Soy Cart Item
     </div>
   )
 }
