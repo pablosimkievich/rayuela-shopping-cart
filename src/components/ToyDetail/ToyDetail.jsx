@@ -62,7 +62,7 @@ export const ToyDetail = () => {
         onClick={() => addToCart(toy.id)}
         >
           Agregar al Carrito
-          <CiShoppingCart className="cart-icon" />
+          <CiShoppingCart className="toy-detail-cart-icon" />
         </button>
       </div>
     </>

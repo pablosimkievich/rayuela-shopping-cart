@@ -1,4 +1,3 @@
-import React from "react"
 import { useFiltersContext } from "../../context/filtersContext.jsx"
 import { useProductContext } from "../../context/productContext.jsx"
 import { useState, useEffect } from "react"
@@ -7,7 +6,7 @@ import { CiShoppingCart } from "react-icons/ci"
 import axios from "axios";
 import "./Toys.css";
 import { useCartStore } from "../../store/cartStore.jsx"
-// import shallow from 'zustand/shallow'
+
 
 export const Toys = () => {
   const { filters } = useFiltersContext()
@@ -63,7 +62,7 @@ export const Toys = () => {
             className='btn toys-btn'
             onClick={() => addToCart(e.id)}
             >Agregar al Carrito
-            <CiShoppingCart className="cart-icon" />
+            <CiShoppingCart className="toys-cart-icon" />
             </button>
           </div>
         );
