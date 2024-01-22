@@ -11,12 +11,11 @@ export const useCartStore = create(persist((set, get) => ({
         const json = await axios(`https://rayuela.onrender.com/api/products/${toyId}`)
         const theToy = json.data
         const { id, img, name, price } = theToy
-        console.log(theToy)
         let toyObject = {
-            id: id,
+            id: Number(id),
             img: img,
             name: name,
-            price: price,
+            price: Number(price),
             quantity: 1 
         }
         let cartItems = get().cart
@@ -59,30 +58,20 @@ export const useCartStore = create(persist((set, get) => ({
         getToyUnitsQ()
         return
     },
-    updateCartItemQ: (toyId, quantity) => {
-        console.log(toyId)
-        console.log(quantity) 
+    updateCartItemQ: async (toyId, newQuantity) => {
         let cartItems = get().cart
-        let getTotalAmount = get().getTotalAmount
         let getToyUnitsQ = get().getToyUnitsQ
-        /* let updatedCart = cartItems.map( item =>
-             item.id === toyId
-            ? {...item, quantity: quantity}
-            :  item
-        ) */
-        let updatedCart = cartItems.map( item => {
-            if (item.id === toyId) {
-                return Object.assign({}, item, {quantity: quantity})
-            } else {
-                return item
+        let getTotalAmount = get().getTotalAmount
+        for (let i = 0; i < cartItems.length; i++) {
+            if (cartItems[i].id === Number(toyId)) {
+                cartItems[i].quantity = Number(newQuantity) 
             }
-        })
-        console.log(updatedCart)
-        set({cart: updatedCart})
-        let cart = get().cart
-        console.log(cart)
+        }
+        set({cart: cartItems})
         getTotalAmount()
         getToyUnitsQ()
+        let cart = get().cart
+        // console.log(cart)
         return
     },
     clearStore: () => {
