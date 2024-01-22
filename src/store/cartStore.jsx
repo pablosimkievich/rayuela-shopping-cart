@@ -36,7 +36,6 @@ export const useCartStore = create(persist((set, get) => ({
         getTotalAmount()
         getToyUnitsQ()
         return
-        
     },
     getTotalAmount: () => {
         let cartItems = get().cart
@@ -66,9 +65,22 @@ export const useCartStore = create(persist((set, get) => ({
         let cartItems = get().cart
         let getTotalAmount = get().getTotalAmount
         let getToyUnitsQ = get().getToyUnitsQ
-        let updatedCart = cartItems.map( item => item.id === toyId? item.quantity = quantity: item 
-        )
+        /* let updatedCart = cartItems.map( item =>
+             item.id === toyId
+            ? {...item, quantity: quantity}
+            :  item
+        ) */
+        let updatedCart = cartItems.map( item => {
+            if (item.id === toyId) {
+                return Object.assign({}, item, {quantity: quantity})
+            } else {
+                return item
+            }
+        })
+        console.log(updatedCart)
         set({cart: updatedCart})
+        let cart = get().cart
+        console.log(cart)
         getTotalAmount()
         getToyUnitsQ()
         return

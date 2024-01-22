@@ -14,7 +14,7 @@ export const SearchBar = () => {
     <div className="container">
       <label htmlFor="query">Busca un juguete</label>
       <input className="search-input" type="text" onChange={handleSearchChange} value={searchQuery} />
-      <button>Buscar</button>
+      <button classsName="search-button">Buscar</button>
     </div>
   );
 };
