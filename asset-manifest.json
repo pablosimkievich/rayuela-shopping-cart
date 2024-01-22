@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rayuela-shopping-cart/static/css/main.8fdffcae.css",
+    "main.js": "/rayuela-shopping-cart/static/js/main.ea39da47.js",
+    "static/media/mercado-pago.svg": "/rayuela-shopping-cart/static/media/mercado-pago.279e024d3012cff214da31daedfbbde2.svg",
+    "static/media/paypal.svg": "/rayuela-shopping-cart/static/media/paypal.1cd41bb5bb3dd656a6fb7620c2309421.svg",
+    "static/media/visa.svg": "/rayuela-shopping-cart/static/media/visa.0a14e19276b6fa8c629b536686c1aa9d.svg",
+    "index.html": "/rayuela-shopping-cart/index.html",
+    "main.8fdffcae.css.map": "/rayuela-shopping-cart/static/css/main.8fdffcae.css.map",
+    "main.ea39da47.js.map": "/rayuela-shopping-cart/static/js/main.ea39da47.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fdffcae.css",
+    "static/js/main.ea39da47.js"
+  ]
+}
