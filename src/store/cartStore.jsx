@@ -70,8 +70,6 @@ export const useCartStore = create(persist((set, get) => ({
         set({cart: cartItems})
         getTotalAmount()
         getToyUnitsQ()
-        // let cart = get().cart
-        // console.log(cart)
         return
     },
     clearStore: () => {
