@@ -12,7 +12,11 @@ export const ShoppingCart = () => {
   const totalAmount = useCartStore((state) => state.totalAmount);
   const cartItems = useCartStore((state) => state.cart);
   const removeCartItem = useCartStore(state => state.removeCartItem)
-  // const updateCartItemQ = useCartStore(state => state.updateCartItemQ)
+  const updateCartItemQ = useCartStore(state => state.updateCartItemQ)
+
+const handleChange = (e) => {
+  updateCartItemQ(e.target.id, e.target.value)
+}
 
   return (
     <div className="shopping-cart-container">
@@ -51,17 +55,18 @@ export const ShoppingCart = () => {
         return (
           <div className="cart-items-container">
             <div>
-                <div className="table table-row" key={i}>
+                <div className="table table-row" key={cartItem.id}>
                   <img className="item-img" src={cartItem.img} alt="" />
                   <p className="item-name">{cartItem.name}</p>
                   <p className="item-price">$ {cartItem.price}</p>
                     <input
+                      id={cartItem.id}
                       className="item-input"
                       type="number"
                       min="1"
                       max="30"
                       defaultValue={cartItem.quantity}
-                      // onChange={() => updateCartItemQ(cartItem.id)}
+                      onChange={(handleChange)}
                     />
                     <button 
                       className="remove-button"

@@ -28,8 +28,7 @@ export const useCartStore = create(persist((set, get) => ({
                 set({cart: cartItems})
                 getTotalAmount()
                 getToyUnitsQ()
-                return
-                
+                return  
             }
         }
         cartItems.push(toyObject)
@@ -61,13 +60,14 @@ export const useCartStore = create(persist((set, get) => ({
         getToyUnitsQ()
         return
     },
-    updateCartItemQ: (toyId) => {
+    updateCartItemQ: (toyId, quantity) => {
+        console.log(toyId)
+        console.log(quantity) 
         let cartItems = get().cart
         let getTotalAmount = get().getTotalAmount
         let getToyUnitsQ = get().getToyUnitsQ
-        let updatedCart = cartItems.map( item => {
-            return toyId === item.id? item.quantity++: ""
-        })
+        let updatedCart = cartItems.map( item => item.id === toyId? item.quantity = quantity: item 
+        )
         set({cart: updatedCart})
         getTotalAmount()
         getToyUnitsQ()
