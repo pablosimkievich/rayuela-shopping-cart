@@ -2,7 +2,7 @@
 
 *Rayuela Shopping Cart es el carro de compras de la juguetería Rayuela. Rayuela es un E-Commerce que se dedica a la venta de juguetes didácticos.*
 
-------------
+
 
 <image src="./public/screen-capture-rayuela-shopping-cart.png">
 
@@ -17,6 +17,7 @@
 * Página de detalle del juguete.
 
 ------------
+### Herramientas implementadas
 * Uso de 2 contextos (useContext), para los filtros y la búsqueda por juguete.
 * Implementación de Zustand para el manejo de estados globales del shopping cart. Con persistencia de datos del lado del cliente (loacalStorage de Zustand).
 * React Router DOM y uso de rutas parametrizadas para el detalle del producto.
